@@ -15,9 +15,9 @@ namespace JwtAuthenticationManager
         public JwtTokenHandler(ApplicationDbContext context)
         {
             _context = context;
-            _admins.AddRange(_context.Admins.ToList());
-            _doctors.AddRange(_context.Doctors.ToList());
-            _patients.AddRange(_context.Patients.ToList());
+            _admins?.AddRange(_context.Admins.ToList());
+            _doctors?.AddRange(_context.Doctors.ToList());
+            _patients?.AddRange(_context.Patients.ToList());
         }
     }
 }
