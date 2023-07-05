@@ -3,14 +3,14 @@ using Domain.Validators;
 using Microsoft.AspNetCore.Mvc;
 using Persistence.Context;
 
-namespace AppointmentMicroservice.Controllers
+namespace NoticeMicroservice.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    public class EntitiesController : ControllerBase
+    public class NoticsController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
-        public EntitiesController(ApplicationDbContext context)
+        public NoticsController(ApplicationDbContext context)
         {
             _context = context;
         }

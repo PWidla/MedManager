@@ -2,15 +2,16 @@
 using Domain.Validators;
 using Microsoft.AspNetCore.Mvc;
 using Persistence.Context;
+using System.Numerics;
 
 namespace AppointmentMicroservice.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    public class EntitiesController : ControllerBase
+    public class AppointmentsControllers : ControllerBase
     {
         private readonly ApplicationDbContext _context;
-        public EntitiesController(ApplicationDbContext context)
+        public AppointmentsControllers(ApplicationDbContext context)
         {
             _context = context;
         }
