@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence", "Persistence\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiGateway", "ApiGateway\ApiGateway.csproj", "{CE4756AE-D455-4A23-8B0B-F6865EDE5B37}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JwtAuthenticationManager", "JwtAuthenticationManager\JwtAuthenticationManager.csproj", "{0FB7385E-2905-40AF-B4FA-E4157566D7AE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,10 @@ Global
 		{CE4756AE-D455-4A23-8B0B-F6865EDE5B37}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE4756AE-D455-4A23-8B0B-F6865EDE5B37}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE4756AE-D455-4A23-8B0B-F6865EDE5B37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FB7385E-2905-40AF-B4FA-E4157566D7AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FB7385E-2905-40AF-B4FA-E4157566D7AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FB7385E-2905-40AF-B4FA-E4157566D7AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FB7385E-2905-40AF-B4FA-E4157566D7AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
