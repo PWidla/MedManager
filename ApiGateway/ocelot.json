@@ -1,0 +1,84 @@
+{
+  "Routes": [
+    // Appointment Web API
+    {
+      "UpstreamPathTemplate": "/api/Appointment",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7103
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Appointment"
+    },
+    {
+      "UpstreamPathTemplate": "/api/Appointment/{appointmentId}",
+      "UpstreamHttpMethod": [ "Get", "Delete" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7103
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Appointment/{appointmentId}"
+    },
+    //end of Appointment Web API
+
+    //Notice Web API
+    {
+      "UpstreamPathTemplate": "/api/Notice",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7103
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Notice"
+    },
+    {
+      "UpstreamPathTemplate": "/api/Notice/{noticeId}",
+      "UpstreamHttpMethod": [ "Get", "Delete" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7103
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Notice/{noticeId}"
+    },
+    //end of Notice Web API
+
+    //Prescription Web API
+    {
+      "UpstreamPathTemplate": "/api/Prescription",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7103
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Prescription"
+    },
+    {
+      "UpstreamPathTemplate": "/api/Prescription/{prescriptionId}",
+      "UpstreamHttpMethod": [ "Get", "Delete" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7103
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Prescription/{prescriptionId}"
+    }
+    //end of Prescription Web API
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:800"
+  }
+}
