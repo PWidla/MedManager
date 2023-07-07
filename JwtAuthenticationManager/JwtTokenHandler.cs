@@ -41,7 +41,7 @@ namespace JwtAuthenticationManager
             var tokenKey = Encoding.ASCII.GetBytes(JWT_SECURITY_KEY);
             var claimsIdentity = new ClaimsIdentity(new List<Claim>
             {
-                new Claim(JwtRegisteredClaimNames.Email, authenticationRequest.EmailAddress),
+                new Claim(JwtRegisteredClaimNames.Email, authenticationRequest.EmailAddress), //toconsider
                 new Claim(ClaimTypes.Role, userAccount.Role.ToString()),
             });
 
