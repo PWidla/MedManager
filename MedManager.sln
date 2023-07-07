@@ -7,19 +7,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGateway", "ApiGateway", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Microservices", "Microservices", "{41EB7AEF-00CD-4DF5-B499-8EFDB23EF8B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentMicroservice", "AppointmentMicroservice\AppointmentMicroservice.csproj", "{375A2619-65A2-46FB-B683-4A9E0ECFF5BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppointmentMicroservice", "AppointmentMicroservice\AppointmentMicroservice.csproj", "{375A2619-65A2-46FB-B683-4A9E0ECFF5BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoticeMicroservice", "NoticeMicroservice\NoticeMicroservice.csproj", "{58D84C64-759E-4355-86DA-C29063BAE24D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoticeMicroservice", "NoticeMicroservice\NoticeMicroservice.csproj", "{58D84C64-759E-4355-86DA-C29063BAE24D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrescriptionMicroservice", "PrescriptionMicroservice\PrescriptionMicroservice.csproj", "{F7DCB1CB-913F-4901-964B-5C7F89668DD6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrescriptionMicroservice", "PrescriptionMicroservice\PrescriptionMicroservice.csproj", "{F7DCB1CB-913F-4901-964B-5C7F89668DD6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{8009E6D3-1290-4A6E-916D-4A7C2AB51EE7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{8009E6D3-1290-4A6E-916D-4A7C2AB51EE7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence", "Persistence\Persistence.csproj", "{5EB8F7D4-411B-4122-8559-F1C2635F95FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistence", "Persistence\Persistence.csproj", "{5EB8F7D4-411B-4122-8559-F1C2635F95FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiGateway", "ApiGateway\ApiGateway.csproj", "{CE4756AE-D455-4A23-8B0B-F6865EDE5B37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiGateway", "ApiGateway\ApiGateway.csproj", "{CE4756AE-D455-4A23-8B0B-F6865EDE5B37}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JwtAuthenticationManager", "JwtAuthenticationManager\JwtAuthenticationManager.csproj", "{0FB7385E-2905-40AF-B4FA-E4157566D7AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JwtAuthenticationManager", "JwtAuthenticationManager\JwtAuthenticationManager.csproj", "{0FB7385E-2905-40AF-B4FA-E4157566D7AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthenticationWebApi", "AuthenticationWebApi\AuthenticationWebApi.csproj", "{05465FC5-F2F3-41F8-9144-4B21F683549C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +57,10 @@ Global
 		{0FB7385E-2905-40AF-B4FA-E4157566D7AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FB7385E-2905-40AF-B4FA-E4157566D7AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FB7385E-2905-40AF-B4FA-E4157566D7AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05465FC5-F2F3-41F8-9144-4B21F683549C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05465FC5-F2F3-41F8-9144-4B21F683549C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05465FC5-F2F3-41F8-9144-4B21F683549C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05465FC5-F2F3-41F8-9144-4B21F683549C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
