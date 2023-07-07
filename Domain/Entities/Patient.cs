@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Domain.Entities
 {
     [Table("Patient")]
-    public class Patient
+    public class Patient :IUser
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
