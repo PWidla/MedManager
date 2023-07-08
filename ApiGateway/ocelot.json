@@ -1,6 +1,25 @@
 {
   "Routes": [
     {
+      "UpstreamPathTemplate": "/api/Admin",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7061
+        }
+      ],
+      "DownstreamScheme": "https",
+      "DownstreamPathTemplate": "/api/Admin",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "Admin"
+      }
+    },
+    {
       "UpstreamPathTemplate": "/api/Appointment",
       "UpstreamHttpMethod": [ "Get", "Post", "Put" ],
       "DownstreamHostAndPorts": [
