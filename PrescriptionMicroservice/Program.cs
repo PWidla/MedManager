@@ -1,7 +1,7 @@
 using Domain.Entities;
 using Domain.Validators;
-using JwtAuthenticationManager;
 using FluentValidation;
+using JwtAuthenticationManager;
 using Microsoft.EntityFrameworkCore;
 using Persistence.Context;
 
