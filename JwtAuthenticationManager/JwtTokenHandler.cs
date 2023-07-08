@@ -42,7 +42,7 @@ namespace JwtAuthenticationManager
             var claimsIdentity = new ClaimsIdentity(new List<Claim>
             {
                 new Claim(JwtRegisteredClaimNames.Email, authenticationRequest.EmailAddress), //toconsider
-                new Claim(ClaimTypes.Role, userAccount.Role.ToString()),
+                new Claim("Role", userAccount.Role.ToString()),
             });
 
             var signingCredentials = new SigningCredentials(

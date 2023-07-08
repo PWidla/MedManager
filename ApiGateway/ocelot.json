@@ -1,19 +1,5 @@
 {
   "Routes": [
-    // Authentication Web API
-    {
-      "UpstreamPathTemplate": "/api/Account",
-      "UpstreamHttpMethod": [ "Post" ],
-      "DownstreamScheme": "https",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "authenticationwebapi",
-          "Port": 7041
-        }
-      ],
-      "DownstreamPathTemplate": "/api/Account"
-    },
-    // Appointment Web API
     {
       "UpstreamPathTemplate": "/api/Appointment",
       "UpstreamHttpMethod": [ "Get", "Post", "Put" ],
@@ -24,7 +10,14 @@
         }
       ],
       "DownstreamScheme": "https",
-      "DownstreamPathTemplate": "/api/Appointment"
+      "DownstreamPathTemplate": "/api/Appointment",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "Admin"
+      }
     },
     {
       "UpstreamPathTemplate": "/api/Appointment/{appointmentId}",
@@ -36,11 +29,15 @@
           "Port": 7178
         }
       ],
-      "DownstreamPathTemplate": "/api/Appointment/{appointmentId}"
+      "DownstreamPathTemplate": "/api/Appointment/{appointmentId}",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "Admin"
+      }
     },
-    //end of Appointment Web API
-
-    //Notice Web API
     {
       "UpstreamPathTemplate": "/api/Notice",
       "UpstreamHttpMethod": [ "Get", "Post", "Put" ],
@@ -51,7 +48,14 @@
         }
       ],
       "DownstreamScheme": "https",
-      "DownstreamPathTemplate": "/api/Notice"
+      "DownstreamPathTemplate": "/api/Notice",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "Admin"
+      }
     },
     {
       "UpstreamPathTemplate": "/api/Notice/{noticeId}",
@@ -63,11 +67,15 @@
           "Port": 7290
         }
       ],
-      "DownstreamPathTemplate": "/api/Notice/{noticeId}"
+      "DownstreamPathTemplate": "/api/Notice/{noticeId}",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "Admin"
+      }
     },
-    //end of Notice Web API
-
-    //Prescription Web API
     {
       "UpstreamPathTemplate": "/api/Prescription",
       "UpstreamHttpMethod": [ "Get", "Post", "Put" ],
@@ -78,7 +86,14 @@
         }
       ],
       "DownstreamScheme": "https",
-      "DownstreamPathTemplate": "/api/Prescription"
+      "DownstreamPathTemplate": "/api/Prescription",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "Admin"
+      }
     },
     {
       "UpstreamPathTemplate": "/api/Prescription/{prescriptionId}",
@@ -90,9 +105,15 @@
           "Port": 7044
         }
       ],
-      "DownstreamPathTemplate": "/api/Prescription/{prescriptionId}"
+      "DownstreamPathTemplate": "/api/Prescription/{prescriptionId}",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "Admin"
+      }
     }
-    //end of Prescription Web API
   ],
   "GlobalConfiguration": {
     "BaseUrl": "https://localhost:800"

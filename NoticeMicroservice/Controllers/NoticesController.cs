@@ -8,10 +8,10 @@ namespace NoticeMicroservice.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    public class NoticsController : ControllerBase
+    public class NoticesController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
-        public NoticsController(ApplicationDbContext context)
+        public NoticesController(ApplicationDbContext context)
         {
             _context = context;
         }
