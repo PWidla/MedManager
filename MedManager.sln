@@ -25,6 +25,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthenticationWebApi", "Aut
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdminMicroservice", "AdminMicroservice\AdminMicroservice.csproj", "{4A0BDCDF-7CCB-4CA9-8FEB-5906E9AA5DCA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorMicroservice", "DoctorMicroservice\DoctorMicroservice.csproj", "{6C58786A-B694-4FEF-A6FD-4AFC8F108D79}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +69,10 @@ Global
 		{4A0BDCDF-7CCB-4CA9-8FEB-5906E9AA5DCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A0BDCDF-7CCB-4CA9-8FEB-5906E9AA5DCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A0BDCDF-7CCB-4CA9-8FEB-5906E9AA5DCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C58786A-B694-4FEF-A6FD-4AFC8F108D79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C58786A-B694-4FEF-A6FD-4AFC8F108D79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C58786A-B694-4FEF-A6FD-4AFC8F108D79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C58786A-B694-4FEF-A6FD-4AFC8F108D79}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -77,6 +83,7 @@ Global
 		{F7DCB1CB-913F-4901-964B-5C7F89668DD6} = {41EB7AEF-00CD-4DF5-B499-8EFDB23EF8B1}
 		{CE4756AE-D455-4A23-8B0B-F6865EDE5B37} = {2ED078D2-FFC5-4FDD-B5DF-19DCB6827723}
 		{4A0BDCDF-7CCB-4CA9-8FEB-5906E9AA5DCA} = {41EB7AEF-00CD-4DF5-B499-8EFDB23EF8B1}
+		{6C58786A-B694-4FEF-A6FD-4AFC8F108D79} = {41EB7AEF-00CD-4DF5-B499-8EFDB23EF8B1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {ACBC4671-7921-4BD4-9AE4-52417021E548}
