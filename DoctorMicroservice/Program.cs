@@ -4,6 +4,8 @@ using FluentValidation;
 using Persistence.Context;
 using JwtAuthenticationManager;
 using Microsoft.EntityFrameworkCore;
+using DoctorMicroservice.Application.Interfaces;
+using DoctorMicroservice.Application.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +20,7 @@ builder.Services.AddCustomJwtAuthentication();
 builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddTransient<IValidator<Doctor>, DoctorValidator>();
+builder.Services.AddTransient<IDoctorRepository, DoctorRepository>();
 
 builder.Services.AddDbContext<ApplicationDbContext>(opt => opt.UseSqlServer(connectionString));
 

@@ -10,24 +10,24 @@ namespace NoticeMicroservice.Controllers
     [ApiController]
     public class NoticesController : ControllerBase
     {
-        private readonly INoticeRepository _NoticeRepository;
+        private readonly INoticeRepository _noticeRepository;
 
         public NoticesController(INoticeRepository NoticeRepository)
         {
-            _NoticeRepository = NoticeRepository;
+            _noticeRepository = NoticeRepository;
         }
 
         [HttpGet]
         public ActionResult<IEnumerable<Notice>> GetNotices()
         {
-            var Notices = _NoticeRepository.GetNotices();
+            var Notices = _noticeRepository.GetNotices();
             return Ok(Notices);
         }
 
         [HttpGet("{noticeId:int}")]
         public ActionResult<Notice> GetNotice(int NoticeId)
         {
-            var Notice = _NoticeRepository.GetNotice(NoticeId);
+            var Notice = _noticeRepository.GetNotice(NoticeId);
 
             if (Notice == null)
                 return NotFound();
@@ -50,7 +50,7 @@ namespace NoticeMicroservice.Controllers
                 return BadRequest(ModelState);
             }
 
-            var created = _NoticeRepository.CreateNotice(Notice);
+            var created = _noticeRepository.CreateNotice(Notice);
 
             if (!created)
                 return BadRequest();
@@ -59,18 +59,18 @@ namespace NoticeMicroservice.Controllers
         }
 
         [HttpPut("{noticeId:int}")]
-        public ActionResult UpdateNotice(int NoticeId, Notice Notice)
+        public ActionResult UpdateNotice(int noticeId, Notice notice)
         {
-            if (NoticeId != Notice.Id)
+            if (noticeId != notice.Id)
                 return BadRequest();
 
-            var NoticeExists = _NoticeRepository.NoticeExists(NoticeId);
+            var NoticeExists = _noticeRepository.NoticeExists(noticeId);
 
             if (!NoticeExists)
                 return NotFound();
 
             var NoticeValidator = new NoticeValidator();
-            ValidationResult validationResult = NoticeValidator.Validate(Notice);
+            ValidationResult validationResult = NoticeValidator.Validate(notice);
 
             if (!validationResult.IsValid)
             {
@@ -81,7 +81,7 @@ namespace NoticeMicroservice.Controllers
                 return BadRequest(ModelState);
             }
 
-            var updated = _NoticeRepository.UpdateNotice(Notice);
+            var updated = _noticeRepository.UpdateNotice(notice);
 
             if (!updated)
                 return BadRequest();
@@ -90,14 +90,14 @@ namespace NoticeMicroservice.Controllers
         }
 
         [HttpDelete("{noticeId:int}")]
-        public ActionResult DeleteNotice(int NoticeId)
+        public ActionResult DeleteNotice(int noticeId)
         {
-            var NoticeExists = _NoticeRepository.NoticeExists(NoticeId);
+            var noticeExists = _noticeRepository.NoticeExists(noticeId);
 
-            if (!NoticeExists)
+            if (!noticeExists)
                 return NotFound();
 
-            var deleted = _NoticeRepository.DeleteNotice(NoticeId);
+            var deleted = _noticeRepository.DeleteNotice(noticeId);
 
             if (!deleted)
                 return BadRequest();

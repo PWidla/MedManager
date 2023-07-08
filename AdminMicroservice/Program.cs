@@ -1,3 +1,5 @@
+using AdminMicroservice.Application.Interfaces;
+using AdminMicroservice.Application.Repositories;
 using Domain.Entities;
 using Domain.Validators;
 using FluentValidation;
@@ -18,6 +20,7 @@ builder.Services.AddCustomJwtAuthentication();
 builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddTransient<IValidator<Admin>, AdminValidator>();
+builder.Services.AddTransient<IAdminRepository, AdminRepository>();
 
 builder.Services.AddDbContext<ApplicationDbContext>(opt => opt.UseSqlServer(connectionString));
 

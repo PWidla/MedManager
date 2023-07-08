@@ -1,3 +1,5 @@
+using AppointmentMicroservice.Application.Interfaces;
+using AppointmentMicroservice.Application.Repositories;
 using Domain.Entities;
 using Domain.Validators;
 using FluentValidation;
@@ -19,6 +21,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddTransient<IValidator<Appointment>, AppointmentValidator>();
+builder.Services.AddTransient<IAppointmentRepository, AppointmentRepository>();
 
 builder.Services.AddDbContext<ApplicationDbContext>(opt => opt.UseSqlServer(connectionString));
 

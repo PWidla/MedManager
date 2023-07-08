@@ -4,6 +4,8 @@ using FluentValidation;
 using JwtAuthenticationManager;
 using Microsoft.EntityFrameworkCore;
 using Persistence.Context;
+using PrescriptionMicroservice.Application.Interfaces;
+using PrescriptionMicroservice.Application.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +21,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddTransient<IValidator<Prescription>, PrescriptionValidator>();
+builder.Services.AddTransient<IPrescriptionRepository, PrescriptionRepository>();
 
 builder.Services.AddDbContext<ApplicationDbContext>(opt => opt.UseSqlServer(connectionString));
 
