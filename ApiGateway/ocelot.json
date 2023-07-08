@@ -8,7 +8,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "authenticationwebapi",
-          "Port": 80
+          "Port": 7041
         }
       ],
       "DownstreamPathTemplate": "/api/Account"
@@ -20,7 +20,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 7103
+          "Port": 7178
         }
       ],
       "DownstreamScheme": "https",
@@ -33,19 +33,21 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 7103
+          "Port": 7178
         }
       ],
       "DownstreamPathTemplate": "/api/Appointment/{appointmentId}"
     },
-    // Notice Web API
+    //end of Appointment Web API
+
+    //Notice Web API
     {
       "UpstreamPathTemplate": "/api/Notice",
       "UpstreamHttpMethod": [ "Get", "Post", "Put" ],
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 7103
+          "Port": 7290
         }
       ],
       "DownstreamScheme": "https",
@@ -58,19 +60,21 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 7103
+          "Port": 7290
         }
       ],
       "DownstreamPathTemplate": "/api/Notice/{noticeId}"
     },
-    // Prescription Web API
+    //end of Notice Web API
+
+    //Prescription Web API
     {
       "UpstreamPathTemplate": "/api/Prescription",
       "UpstreamHttpMethod": [ "Get", "Post", "Put" ],
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 7103
+          "Port": 7044
         }
       ],
       "DownstreamScheme": "https",
@@ -83,11 +87,12 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 7103
+          "Port": 7044
         }
       ],
       "DownstreamPathTemplate": "/api/Prescription/{prescriptionId}"
     }
+    //end of Prescription Web API
   ],
   "GlobalConfiguration": {
     "BaseUrl": "https://localhost:800"

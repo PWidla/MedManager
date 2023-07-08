@@ -11,10 +11,10 @@ namespace JwtAuthenticationManager
     {
         public const string JWT_SECURITY_KEY = "kj2JMl2N44kjeL992N9zZ1lwedaNZ1aqL";
         private const int JWT_TOKEN_VALIDITY_MINS = 20;
-        private List<Admin> _admins;
-        private List<Doctor> _doctors;
-        private List<Patient> _patients;
-        private List<IUser> _userAccountList;
+        private List<Admin> _admins = new List<Admin>();
+        private List<Doctor> _doctors = new List<Doctor>();
+        private List<Patient> _patients = new List<Patient>();
+        private List<IUser> _userAccountList = new List<IUser>();
 
         private readonly ApplicationDbContext _context;
         public JwtTokenHandler(ApplicationDbContext context)
