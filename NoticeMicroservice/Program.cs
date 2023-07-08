@@ -3,6 +3,8 @@ using Domain.Validators;
 using FluentValidation;
 using JwtAuthenticationManager;
 using Microsoft.EntityFrameworkCore;
+using NoticeMicroservice.Application.Interfaces;
+using NoticeMicroservice.Application.Repositories;
 using Persistence.Context;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,6 +21,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddTransient<IValidator<Notice>, NoticeValidator>();
+builder.Services.AddTransient<INoticeRepository, NoticeRepository>();
 
 builder.Services.AddDbContext<ApplicationDbContext>(opt => opt.UseSqlServer(connectionString));
 
