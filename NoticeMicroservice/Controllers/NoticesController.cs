@@ -11,10 +11,12 @@ namespace NoticeMicroservice.Controllers
     public class NoticesController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
+
         public NoticesController(ApplicationDbContext context)
         {
             _context = context;
         }
+
         #region notice
         [HttpGet]
         public ActionResult<IEnumerable<Notice>> GetNotices()
@@ -44,6 +46,7 @@ namespace NoticeMicroservice.Controllers
                 }
                 return BadRequest(ModelState);
             }
+
             await _context.Notices.AddAsync(notice);
             await _context.SaveChangesAsync();
             return Ok();
@@ -64,6 +67,7 @@ namespace NoticeMicroservice.Controllers
                 }
                 return BadRequest(ModelState);
             }
+
             _context.Notices.Update(notice);
             await _context.SaveChangesAsync();
             return Ok();
