@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Persistence.Context;
 
-namespace AppointmentMicroservice.Controllers
+namespace PrescriptionMicroservice.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]

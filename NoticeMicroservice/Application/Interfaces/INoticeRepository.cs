@@ -1,6 +1,6 @@
 ﻿using Domain.Entities;
 
-namespace AppointmentMicroservice.Application.Interfaces
+namespace NoticeMicroservice.Application.Interfaces
 {
     public interface INoticeRepository
     {
