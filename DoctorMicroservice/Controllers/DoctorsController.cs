@@ -25,10 +25,10 @@ namespace DoctorMicroservice.Controllers
             return Ok(Doctors);
         }
 
-        [HttpGet("{DoctorId:int}")]
-        public ActionResult<Doctor> GetDoctor(int DoctorId)
+        [HttpGet("{doctorId:int}")]
+        public ActionResult<Doctor> GetDoctor(int doctorId)
         {
-            var Doctor = _DoctorRepository.GetDoctor(DoctorId);
+            var Doctor = _DoctorRepository.GetDoctor(doctorId);
 
             if (Doctor == null)
                 return NotFound();
@@ -59,13 +59,13 @@ namespace DoctorMicroservice.Controllers
             return Ok();
         }
 
-        [HttpPut("{DoctorId:int}")]
-        public ActionResult UpdateDoctor(int DoctorId, Doctor Doctor)
+        [HttpPut("{doctorId:int}")]
+        public ActionResult UpdateDoctor(int doctorId, Doctor Doctor)
         {
-            if (DoctorId != Doctor.Id)
+            if (doctorId != Doctor.Id)
                 return BadRequest();
 
-            var DoctorExists = _DoctorRepository.DoctorExists(DoctorId);
+            var DoctorExists = _DoctorRepository.DoctorExists(doctorId);
 
             if (!DoctorExists)
                 return NotFound();
@@ -90,15 +90,15 @@ namespace DoctorMicroservice.Controllers
             return Ok();
         }
 
-        [HttpDelete("{DoctorId:int}")]
-        public ActionResult DeleteDoctor(int DoctorId)
+        [HttpDelete("{doctorId:int}")]
+        public ActionResult DeleteDoctor(int doctorId)
         {
-            var DoctorExists = _DoctorRepository.DoctorExists(DoctorId);
+            var DoctorExists = _DoctorRepository.DoctorExists(doctorId);
 
             if (!DoctorExists)
                 return NotFound();
 
-            var deleted = _DoctorRepository.DeleteDoctor(DoctorId);
+            var deleted = _DoctorRepository.DeleteDoctor(doctorId);
 
             if (!deleted)
                 return BadRequest();
