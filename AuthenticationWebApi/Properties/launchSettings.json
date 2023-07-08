@@ -12,7 +12,8 @@
     "AuthenticationWebApi": {
       "commandName": "Project",
       "dotnetRunMessages": true,
-      "launchBrowser": true,
+      //"launchBrowser": true,
+      "launchBrowser": false,
       //"launchUrl": "weatherforecast",
       "launchUrl": "swagger", //
       "applicationUrl": "https://localhost:7041;http://localhost:5260",
@@ -22,7 +23,8 @@
     },
     "IIS Express": {
       "commandName": "IISExpress",
-      "launchBrowser": true,
+      //"launchBrowser": true,
+      "launchBrowser": false,
       //"launchUrl": "weatherforecast",
       "launchUrl": "swagger", //
       "environmentVariables": {
