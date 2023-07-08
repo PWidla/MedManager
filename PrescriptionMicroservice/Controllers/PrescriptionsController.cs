@@ -7,7 +7,7 @@ using PrescriptionMicroservice.Application.Interfaces;
 
 namespace PrescriptionMicroservice.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class PrescriptionsController : ControllerBase
     {

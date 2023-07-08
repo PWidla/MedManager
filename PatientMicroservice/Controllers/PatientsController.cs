@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace PatientMicroservice.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class PatientsController : ControllerBase
     {

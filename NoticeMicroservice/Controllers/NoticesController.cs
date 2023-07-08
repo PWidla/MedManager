@@ -1,8 +1,8 @@
-﻿using Domain.Entities;
+﻿using NoticeMicroservice.Application.Interfaces;
+using Domain.Entities;
 using Domain.Validators;
-using Microsoft.AspNetCore.Authorization;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
-using Persistence.Context;
 
 namespace NoticeMicroservice.Controllers
 {
@@ -10,78 +10,99 @@ namespace NoticeMicroservice.Controllers
     [ApiController]
     public class NoticesController : ControllerBase
     {
-        private readonly ApplicationDbContext _context;
+        private readonly INoticeRepository _NoticeRepository;
 
-        public NoticesController(ApplicationDbContext context)
+        public NoticesController(INoticeRepository NoticeRepository)
         {
-            _context = context;
+            _NoticeRepository = NoticeRepository;
         }
 
-        #region notice
         [HttpGet]
         public ActionResult<IEnumerable<Notice>> GetNotices()
         {
-            return _context.Notices;
+            var Notices = _NoticeRepository.GetNotices();
+            return Ok(Notices);
         }
 
         [HttpGet("{noticeId:int}")]
-        public async Task<ActionResult<Notice>> GetNoticeById(int noticeId)
+        public ActionResult<Notice> GetNotice(int NoticeId)
         {
-            var notice = await _context.Notices.FindAsync(noticeId);
-            return notice;
+            var Notice = _NoticeRepository.GetNotice(NoticeId);
+
+            if (Notice == null)
+                return NotFound();
+
+            return Ok(Notice);
         }
 
         [HttpPost]
-        [Authorize(Roles = "Admin")]
-        public async Task<ActionResult> CreateNotice(Notice notice)
+        public ActionResult CreateNotice(Notice Notice)
         {
-            var noticeValidator = new NoticeValidator();
-            var validationResult = await noticeValidator.ValidateAsync(notice);
+            var NoticeValidator = new NoticeValidator();
+            ValidationResult validationResult = NoticeValidator.Validate(Notice);
 
             if (!validationResult.IsValid)
             {
-                foreach (var error in validationResult.Errors)
+                foreach (ValidationFailure failure in validationResult.Errors)
                 {
-                    ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
+                    ModelState.AddModelError(failure.PropertyName, failure.ErrorMessage);
                 }
                 return BadRequest(ModelState);
             }
 
-            await _context.Notices.AddAsync(notice);
-            await _context.SaveChangesAsync();
+            var created = _NoticeRepository.CreateNotice(Notice);
+
+            if (!created)
+                return BadRequest();
+
             return Ok();
         }
 
-        [HttpPut]
-        [Authorize(Roles = "Admin")]
-        public async Task<ActionResult> UpdateNotice(Notice notice)
+        [HttpPut("{noticeId:int}")]
+        public ActionResult UpdateNotice(int NoticeId, Notice Notice)
         {
-            var noticeValidator = new NoticeValidator();
-            var validationResult = await noticeValidator.ValidateAsync(notice);
+            if (NoticeId != Notice.Id)
+                return BadRequest();
+
+            var NoticeExists = _NoticeRepository.NoticeExists(NoticeId);
+
+            if (!NoticeExists)
+                return NotFound();
+
+            var NoticeValidator = new NoticeValidator();
+            ValidationResult validationResult = NoticeValidator.Validate(Notice);
 
             if (!validationResult.IsValid)
             {
-                foreach (var error in validationResult.Errors)
+                foreach (ValidationFailure failure in validationResult.Errors)
                 {
-                    ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
+                    ModelState.AddModelError(failure.PropertyName, failure.ErrorMessage);
                 }
                 return BadRequest(ModelState);
             }
 
-            _context.Notices.Update(notice);
-            await _context.SaveChangesAsync();
+            var updated = _NoticeRepository.UpdateNotice(Notice);
+
+            if (!updated)
+                return BadRequest();
+
             return Ok();
         }
 
-        [HttpDelete("{noticeId:int}")]
-        [Authorize(Roles = "Admin")]
-        public async Task<ActionResult> DeleteNotice(int noticeId)
+        [HttpDelete("noticeId:int}")]
+        public ActionResult DeleteNotice(int NoticeId)
         {
-            var notice = await _context.Notices.FindAsync(noticeId);
-            _context.Notices.Remove(notice);
-            await _context.SaveChangesAsync();
+            var NoticeExists = _NoticeRepository.NoticeExists(NoticeId);
+
+            if (!NoticeExists)
+                return NotFound();
+
+            var deleted = _NoticeRepository.DeleteNotice(NoticeId);
+
+            if (!deleted)
+                return BadRequest();
+
             return Ok();
         }
-        #endregion
     }
 }

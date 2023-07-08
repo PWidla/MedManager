@@ -9,7 +9,7 @@ using Persistence.Context;
 
 namespace AdminMicroservice.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class AdminsController : ControllerBase
     {
