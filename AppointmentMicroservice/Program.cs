@@ -1,6 +1,7 @@
 using Domain.Entities;
 using Domain.Validators;
 using FluentValidation;
+using JwtAuthenticationManager;
 using Microsoft.EntityFrameworkCore;
 using Persistence.Context;
 
@@ -11,6 +12,7 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 // Add services to the container.
 
 builder.Services.AddControllers();
+builder.Services.AddCustomJwtAuthentication();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -31,6 +33,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
