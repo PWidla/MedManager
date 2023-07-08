@@ -29,7 +29,7 @@ namespace AdminMicroservice.Controllers
         }
 
         [HttpGet("{adminId:int}")]
-        public ActionResult<Admin> GetAdmin(int adminId)
+        public ActionResult<Admin> GetAdminById(int adminId)
         {
             var admin = _adminRepository.GetAdmin(adminId);
 

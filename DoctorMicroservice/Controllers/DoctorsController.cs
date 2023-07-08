@@ -26,7 +26,7 @@ namespace DoctorMicroservice.Controllers
         }
 
         [HttpGet("{doctorId:int}")]
-        public ActionResult<Doctor> GetDoctor(int doctorId)
+        public ActionResult<Doctor> GetDoctorById(int doctorId)
         {
             var Doctor = _DoctorRepository.GetDoctor(doctorId);
 
