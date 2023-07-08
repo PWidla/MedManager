@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdminMicroservice", "AdminM
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorMicroservice", "DoctorMicroservice\DoctorMicroservice.csproj", "{6C58786A-B694-4FEF-A6FD-4AFC8F108D79}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatientMicroservice", "PatientMicroservice\PatientMicroservice.csproj", "{6C31F58A-F03E-49D7-A6AB-AE0D244D3FDA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +75,10 @@ Global
 		{6C58786A-B694-4FEF-A6FD-4AFC8F108D79}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C58786A-B694-4FEF-A6FD-4AFC8F108D79}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C58786A-B694-4FEF-A6FD-4AFC8F108D79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C31F58A-F03E-49D7-A6AB-AE0D244D3FDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C31F58A-F03E-49D7-A6AB-AE0D244D3FDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C31F58A-F03E-49D7-A6AB-AE0D244D3FDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C31F58A-F03E-49D7-A6AB-AE0D244D3FDA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -84,6 +90,7 @@ Global
 		{CE4756AE-D455-4A23-8B0B-F6865EDE5B37} = {2ED078D2-FFC5-4FDD-B5DF-19DCB6827723}
 		{4A0BDCDF-7CCB-4CA9-8FEB-5906E9AA5DCA} = {41EB7AEF-00CD-4DF5-B499-8EFDB23EF8B1}
 		{6C58786A-B694-4FEF-A6FD-4AFC8F108D79} = {41EB7AEF-00CD-4DF5-B499-8EFDB23EF8B1}
+		{6C31F58A-F03E-49D7-A6AB-AE0D244D3FDA} = {41EB7AEF-00CD-4DF5-B499-8EFDB23EF8B1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {ACBC4671-7921-4BD4-9AE4-52417021E548}

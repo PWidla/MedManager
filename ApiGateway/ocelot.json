@@ -78,6 +78,45 @@
         "Role": "Admin"
       }
     },
+    //Patient
+    {
+      "UpstreamPathTemplate": "/api/Patient",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7121
+        }
+      ],
+      "DownstreamScheme": "https",
+      "DownstreamPathTemplate": "/api/Patient",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "Admin"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/api/Patient/{patientId}",
+      "UpstreamHttpMethod": [ "Get", "Delete" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7121
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Patient/{patientId}",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "Admin"
+      }
+    },
     //Apointment
     {
       "UpstreamPathTemplate": "/api/Appointment",
