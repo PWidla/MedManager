@@ -89,7 +89,7 @@ namespace NoticeMicroservice.Controllers
             return Ok();
         }
 
-        [HttpDelete("noticeId:int}")]
+        [HttpDelete("{noticeId:int}")]
         public ActionResult DeleteNotice(int NoticeId)
         {
             var NoticeExists = _NoticeRepository.NoticeExists(NoticeId);
