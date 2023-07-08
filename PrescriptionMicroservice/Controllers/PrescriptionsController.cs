@@ -1,5 +1,6 @@
 ﻿using Domain.Entities;
 using Domain.Validators;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Persistence.Context;
 
@@ -17,12 +18,14 @@ namespace AppointmentMicroservice.Controllers
 
         #region prescription
         [HttpGet]
+        [Authorize]
         public ActionResult<IEnumerable<Prescription>> GetPrescriptions()
         {
             return _context.Prescriptions;
         }
 
         [HttpGet("{prescriptionId:int}")]
+        [Authorize]
         public async Task<ActionResult<Prescription>> GetPrescriptionById(int prescriptionId)
         {
             var prescription = await _context.Prescriptions.FindAsync(prescriptionId);
@@ -30,6 +33,7 @@ namespace AppointmentMicroservice.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Doctor, Admin")]
         public async Task<ActionResult> CreatePrescription(Prescription prescription)
         {
             var prescriptionValidator = new PrescriptionValidator();
@@ -49,6 +53,7 @@ namespace AppointmentMicroservice.Controllers
         }
 
         [HttpPut]
+        [Authorize(Roles = "Doctor, Admin")]
         public async Task<ActionResult> UpdatePrescription(Prescription prescription)
         {
             var prescriptionValidator = new PrescriptionValidator();
@@ -68,6 +73,7 @@ namespace AppointmentMicroservice.Controllers
         }
 
         [HttpDelete("{prescriptionId:int}")]
+        [Authorize(Roles = "Doctor, Admin")]
         public async Task<ActionResult> DeletePrescription(int prescriptionId)
         {
             var prescription = await _context.Prescriptions.FindAsync(prescriptionId);

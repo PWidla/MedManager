@@ -1,5 +1,6 @@
 ﻿using Domain.Entities;
 using Domain.Validators;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Persistence.Context;
 
@@ -29,6 +30,7 @@ namespace NoticeMicroservice.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult> CreateNotice(Notice notice)
         {
             var noticeValidator = new NoticeValidator();
@@ -48,6 +50,7 @@ namespace NoticeMicroservice.Controllers
         }
 
         [HttpPut]
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult> UpdateNotice(Notice notice)
         {
             var noticeValidator = new NoticeValidator();
@@ -67,6 +70,7 @@ namespace NoticeMicroservice.Controllers
         }
 
         [HttpDelete("{noticeId:int}")]
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult> DeleteNotice(int noticeId)
         {
             var notice = await _context.Notices.FindAsync(noticeId);
