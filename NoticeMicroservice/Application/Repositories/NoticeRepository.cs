@@ -1,5 +1,5 @@
-﻿using AppointmentMicroservice.Application.Interfaces;
-using Domain.Entities;
+﻿using Domain.Entities;
+using NoticeMicroservice.Application.Interfaces;
 using Persistence.Context;
 
 namespace NoticeMicroservice.Application.Repositories

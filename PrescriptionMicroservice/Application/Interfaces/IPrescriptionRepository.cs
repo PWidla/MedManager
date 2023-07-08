@@ -2,14 +2,14 @@
 
 namespace PrescriptionMicroservice.Application.Interfaces
 {
-    public interface IAppointmentRepository
+    public interface IPrescriptionRepository
     {
-        ICollection<Appointment> GetAppointments();
-        Appointment GetAppointment(int id);
-        bool AppointmentExists(int id);
-        bool CreateAppointment(Appointment appointment);
-        bool UpdateAppointment(Appointment appointment);
-        bool DeleteAppointment(int id);
+        ICollection<Prescription> GetPrescriptions();
+        Prescription GetPrescription(int id);
+        bool PrescriptionExists(int id);
+        bool CreatePrescription(Prescription prescription);
+        bool UpdatePrescription(Prescription prescription);
+        bool DeletePrescription(int id);
         bool Save();
     }
 }

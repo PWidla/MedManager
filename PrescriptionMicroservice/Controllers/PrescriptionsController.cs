@@ -3,33 +3,37 @@ using Domain.Validators;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Persistence.Context;
+using PrescriptionMicroservice.Application.Interfaces;
 
 namespace PrescriptionMicroservice.Controllers
 {
-    [Route("api/[controller]/[action]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class PrescriptionsController : ControllerBase
     {
-        private readonly ApplicationDbContext _context;
-        public PrescriptionsController(ApplicationDbContext context)
+        private readonly IPrescriptionRepository _prescriptionRepository;
+
+        public PrescriptionsController(IPrescriptionRepository prescriptionRepository)
         {
-            _context = context;
+            _prescriptionRepository = prescriptionRepository;
         }
 
-        #region prescription
         [HttpGet]
-        [Authorize]
         public ActionResult<IEnumerable<Prescription>> GetPrescriptions()
         {
-            return _context.Prescriptions;
+            var prescriptions = _prescriptionRepository.GetPrescriptions();
+            return Ok(prescriptions);
         }
 
         [HttpGet("{prescriptionId:int}")]
-        [Authorize]
-        public async Task<ActionResult<Prescription>> GetPrescriptionById(int prescriptionId)
+        public ActionResult<Prescription> GetPrescriptionById(int prescriptionId)
         {
-            var prescription = await _context.Prescriptions.FindAsync(prescriptionId);
-            return prescription;
+            var prescription = _prescriptionRepository.GetPrescription(prescriptionId);
+
+            if (prescription == null)
+                return NotFound();
+
+            return Ok(prescription);
         }
 
         [HttpPost]
@@ -47,15 +51,27 @@ namespace PrescriptionMicroservice.Controllers
                 }
                 return BadRequest(ModelState);
             }
-            await _context.Prescriptions.AddAsync(prescription);
-            await _context.SaveChangesAsync();
+
+            var created = _prescriptionRepository.CreatePrescription(prescription);
+
+            if (!created)
+                return BadRequest();
+
             return Ok();
         }
 
-        [HttpPut]
+        [HttpPut("{prescriptionId:int}")]
         [Authorize(Roles = "Doctor, Admin")]
-        public async Task<ActionResult> UpdatePrescription(Prescription prescription)
+        public async Task<ActionResult> UpdatePrescription(int prescriptionId, Prescription prescription)
         {
+            if (prescriptionId != prescription.Id)
+                return BadRequest();
+
+            var prescriptionExists = _prescriptionRepository.PrescriptionExists(prescriptionId);
+
+            if (!prescriptionExists)
+                return NotFound();
+
             var prescriptionValidator = new PrescriptionValidator();
             var validationResult = await prescriptionValidator.ValidateAsync(prescription);
 
@@ -67,20 +83,30 @@ namespace PrescriptionMicroservice.Controllers
                 }
                 return BadRequest(ModelState);
             }
-            _context.Prescriptions.Update(prescription);
-            await _context.SaveChangesAsync();
+
+            var updated = _prescriptionRepository.UpdatePrescription(prescription);
+
+            if (!updated)
+                return BadRequest();
+
             return Ok();
         }
 
         [HttpDelete("{prescriptionId:int}")]
         [Authorize(Roles = "Doctor, Admin")]
-        public async Task<ActionResult> DeletePrescription(int prescriptionId)
+        public ActionResult DeletePrescription(int prescriptionId)
         {
-            var prescription = await _context.Prescriptions.FindAsync(prescriptionId);
-            _context.Prescriptions.Remove(prescription);
-            await _context.SaveChangesAsync();
+            var prescriptionExists = _prescriptionRepository.PrescriptionExists(prescriptionId);
+
+            if (!prescriptionExists)
+                return NotFound();
+
+            var deleted = _prescriptionRepository.DeletePrescription(prescriptionId);
+
+            if (!deleted)
+                return BadRequest();
+
             return Ok();
         }
-        #endregion
     }
 }
