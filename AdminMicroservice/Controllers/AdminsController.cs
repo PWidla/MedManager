@@ -45,9 +45,9 @@ namespace AdminMicroservice.Controllers
             var adminValidator = new AdminValidator();
             ValidationResult validationResult = adminValidator.Validate(admin);
 
-            var users = _adminRepository.GetAdminTrimToUpper(admin);
+            var admins = _adminRepository.GetAdminTrimToUpper(admin);
 
-            if (users != null)
+            if (admins != null)
             {
                 ModelState.AddModelError("", "User already exists");
                 return StatusCode(422, ModelState);
