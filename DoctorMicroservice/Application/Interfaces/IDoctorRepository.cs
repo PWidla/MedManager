@@ -10,6 +10,7 @@ namespace DoctorMicroservice.Application.Interfaces
         bool CreateDoctor(Doctor Doctor);
         bool UpdateDoctor(Doctor Doctor);
         bool DeleteDoctor(int id);
+        Doctor GetDoctorTrimToUpper(Doctor doctor);
         bool Save();
     }
 }

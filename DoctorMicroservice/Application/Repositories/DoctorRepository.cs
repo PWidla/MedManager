@@ -55,5 +55,11 @@ namespace DoctorMicroservice.Application.Repositories
             var saved = _context.SaveChanges();
             return saved > 0 ? true : false;
         }
+
+        public Doctor GetDoctorTrimToUpper(Doctor doctor)
+        {
+            return GetDoctors().Where(c => c.EmailAddress.Trim().ToUpper() == doctor.EmailAddress.TrimEnd().ToUpper())
+                .FirstOrDefault();
+        }
     }
 }

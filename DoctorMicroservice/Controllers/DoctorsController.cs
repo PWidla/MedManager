@@ -42,6 +42,14 @@ namespace DoctorMicroservice.Controllers
             var DoctorValidator = new DoctorValidator();
             ValidationResult validationResult = DoctorValidator.Validate(Doctor);
 
+            var doctors = _DoctorRepository.GetDoctorTrimToUpper(Doctor);
+
+            if (doctors != null)
+            {
+                ModelState.AddModelError("", "User already exists");
+                return StatusCode(422, ModelState);
+            }
+
             if (!validationResult.IsValid)
             {
                 foreach (ValidationFailure failure in validationResult.Errors)
