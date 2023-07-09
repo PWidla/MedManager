@@ -10,6 +10,7 @@ namespace AdminMicroservice.Application.Interfaces
         bool CreateAdmin(Admin admin);
         bool UpdateAdmin(Admin admin);
         bool DeleteAdmin(int id);
+        Admin GetAdminTrimToUpper(Admin admin);
         bool Save();
     }
 }

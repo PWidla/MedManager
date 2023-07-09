@@ -23,11 +23,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JwtAuthenticationManager", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthenticationWebApi", "AuthenticationWebApi\AuthenticationWebApi.csproj", "{05465FC5-F2F3-41F8-9144-4B21F683549C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdminMicroservice", "AdminMicroservice\AdminMicroservice.csproj", "{4A0BDCDF-7CCB-4CA9-8FEB-5906E9AA5DCA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdminMicroservice", "AdminMicroservice\AdminMicroservice.csproj", "{4A0BDCDF-7CCB-4CA9-8FEB-5906E9AA5DCA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorMicroservice", "DoctorMicroservice\DoctorMicroservice.csproj", "{6C58786A-B694-4FEF-A6FD-4AFC8F108D79}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DoctorMicroservice", "DoctorMicroservice\DoctorMicroservice.csproj", "{6C58786A-B694-4FEF-A6FD-4AFC8F108D79}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatientMicroservice", "PatientMicroservice\PatientMicroservice.csproj", "{6C31F58A-F03E-49D7-A6AB-AE0D244D3FDA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PatientMicroservice", "PatientMicroservice\PatientMicroservice.csproj", "{6C31F58A-F03E-49D7-A6AB-AE0D244D3FDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedManager.Tests", "MedManager.Tests\MedManager.Tests.csproj", "{64DB0C8C-9FCD-40E4-9BC2-D7B85566587D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -79,6 +81,10 @@ Global
 		{6C31F58A-F03E-49D7-A6AB-AE0D244D3FDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C31F58A-F03E-49D7-A6AB-AE0D244D3FDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C31F58A-F03E-49D7-A6AB-AE0D244D3FDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64DB0C8C-9FCD-40E4-9BC2-D7B85566587D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64DB0C8C-9FCD-40E4-9BC2-D7B85566587D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64DB0C8C-9FCD-40E4-9BC2-D7B85566587D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64DB0C8C-9FCD-40E4-9BC2-D7B85566587D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

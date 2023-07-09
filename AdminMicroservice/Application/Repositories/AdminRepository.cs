@@ -55,5 +55,11 @@ namespace AdminMicroservice.Application.Repositories
             var saved = _context.SaveChanges();
             return saved > 0 ? true : false;
         }
+
+        public Admin GetAdminTrimToUpper(Admin admin)
+        {
+            return GetAdmins().Where(c => c.EmailAddress.Trim().ToUpper() == admin.EmailAddress.TrimEnd().ToUpper())
+                .FirstOrDefault();
+        }
     }
 }
