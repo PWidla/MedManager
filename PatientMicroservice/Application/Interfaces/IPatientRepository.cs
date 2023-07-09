@@ -10,6 +10,7 @@ namespace PatientMicroservice.Application.Interfaces
         bool CreatePatient(Patient Patient);
         bool UpdatePatient(Patient Patient);
         bool DeletePatient(int id);
+        Patient GetPatientTrimToUpper(Patient patient);
         bool Save();
     }
 }

@@ -56,5 +56,11 @@ namespace PatientMicroservice.Application.Repositories
             var saved = _context.SaveChanges();
             return saved > 0 ? true : false;
         }
+
+        public Patient GetPatientTrimToUpper(Patient patient)
+        {
+            return GetPatients().Where(c => c.EmailAddress.Trim().ToUpper() == patient.EmailAddress.TrimEnd().ToUpper())
+                .FirstOrDefault();
+        }
     }
 }
