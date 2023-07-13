@@ -1,13 +1,9 @@
 ﻿using AdminMicroservice.Application.Interfaces;
 using AdminMicroservice.Controllers;
 using Domain.Entities;
-using Domain.Validators;
 using FakeItEasy;
 using FluentAssertions;
-using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using Xunit;
 
 namespace MedManager.Tests.Controller
 {
