@@ -36,6 +36,7 @@ Collection of postman requests is stored in MedManager.postman_collection.json f
 You can import it by clicking Import button 
 
 ![image](https://github.com/PWidla/MedManager/assets/89644623/8ae75c7f-323c-4718-bf09-5f06904d8d58)
+
 and for instance dragging there the MedManager.postman_collection.json file.
 
 
