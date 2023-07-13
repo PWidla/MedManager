@@ -50,6 +50,14 @@ Collections looks like below
 
 Via auth request you may receive bearer token for tested user.
 
+To use bearer token provide it for instance that way:
+
+  ![image](https://github.com/PWidla/MedManager/assets/89644623/0e169c46-cb91-4aa1-9d43-6fe31620ef72)
+
+
+
+## Tests
+
 You may run tests by navigating in tests explorer:
 
 ![image](https://github.com/PWidla/MedManager/assets/89644623/dd550769-50ae-40b1-a5af-3ea7c88d77a8)
