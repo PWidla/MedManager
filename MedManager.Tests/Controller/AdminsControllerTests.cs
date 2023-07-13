@@ -23,8 +23,6 @@ namespace MedManager.Tests.Controller
         [Fact]
         public void AdminsController_GetAdmins_ReturnOK()
         {
-            var admins = A.Fake<ICollection<Admin>>();
-            var adminList = A.Fake<List<Admin>>();
             var controller = new AdminsController(_adminRepository);
 
             var result = controller.GetAdmins();
