@@ -71,6 +71,7 @@ namespace AdminMicroservice.Controllers
         }
 
         [HttpPut("{adminId:int}")]
+        [Authorize(Roles = "Admin")]
         public ActionResult UpdateAdmin(int adminId, Admin admin)
         {
             if (adminId != admin.Id)
@@ -102,6 +103,7 @@ namespace AdminMicroservice.Controllers
         }
 
         [HttpDelete("{adminId:int}")]
+        [Authorize(Roles = "Admin")]
         public ActionResult DeleteAdmin(int adminId)
         {
             var adminExists = _adminRepository.AdminExists(adminId);

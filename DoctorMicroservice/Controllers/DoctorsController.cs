@@ -2,6 +2,7 @@
 using Domain.Entities;
 using Domain.Validators;
 using FluentValidation.Results;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DoctorMicroservice.Controllers
@@ -67,6 +68,7 @@ namespace DoctorMicroservice.Controllers
             return Ok();
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPut("{doctorId:int}")]
         public ActionResult UpdateDoctor(int doctorId, Doctor Doctor)
         {
@@ -98,6 +100,7 @@ namespace DoctorMicroservice.Controllers
             return Ok();
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{doctorId:int}")]
         public ActionResult DeleteDoctor(int doctorId)
         {

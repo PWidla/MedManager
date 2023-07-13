@@ -3,6 +3,7 @@ using Domain.Entities;
 using Domain.Validators;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace NoticeMicroservice.Controllers
 {
@@ -35,6 +36,7 @@ namespace NoticeMicroservice.Controllers
             return Ok(Notice);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public ActionResult CreateNotice(Notice Notice)
         {
@@ -58,6 +60,7 @@ namespace NoticeMicroservice.Controllers
             return Ok();
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPut("{noticeId:int}")]
         public ActionResult UpdateNotice(int noticeId, Notice notice)
         {
@@ -89,6 +92,7 @@ namespace NoticeMicroservice.Controllers
             return Ok();
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{noticeId:int}")]
         public ActionResult DeleteNotice(int noticeId)
         {
