@@ -21,7 +21,8 @@ Authentication is done by using a bearer token.
   ![image](https://github.com/PWidla/MedManager/assets/89644623/65be97fe-7d26-4832-a05d-eebd275fc4c7)
 
 5. Run the application by clicking
-   ![image](https://github.com/PWidla/MedManager/assets/89644623/6a2af0ce-23b5-460a-a19d-e079da2261d1)
+   ![image](https://github.com/PWidla/MedManager/assets/89644623/76f5cc6f-192e-4a8e-b499-bbb841a7e352)
+
 
 ## Configuration
 
