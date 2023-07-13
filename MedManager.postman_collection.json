@@ -1,0 +1,896 @@
+{
+	"info": {
+		"_postman_id": "f24d1ff0-d928-4a69-84ce-c8f367f057ab",
+		"name": "MedManager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26579295",
+		"_collection_link": "https://blue-meteor-937201.postman.co/workspace/dotnetReact~b8584342-aad1-4197-926d-c8be13d101a8/collection/26579295-f24d1ff0-d928-4a69-84ce-c8f367f057ab?action=share&creator=26579295&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "https://localhost:7041/api/Account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"EmailAddress\":\"admin@example.com\",\r\n    \"Password\":\"admin123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7041/api/Account",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7041",
+							"path": [
+								"api",
+								"Account"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Appointments",
+			"item": [
+				{
+					"name": "GetAppointments",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGV4YW1wbGUuY29tIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNjg4ODQzNjY5LCJleHAiOjE2ODg4NDQ4NjksImlhdCI6MTY4ODg0MzY2OX0.kSlWDKIRIt_k2nz-8iUwk1qK8k89potTKeIBsHS8kgs",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:7178/api/Appointments/GetAppointments",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7178",
+							"path": [
+								"api",
+								"Appointments",
+								"GetAppointments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAppointmentById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7178/api/AppointmentsControllers/GetAppointmentById/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7178",
+							"path": [
+								"api",
+								"AppointmentsControllers",
+								"GetAppointmentById",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateAppointment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1,\r\n  \"date\": \"2023-05-11T10:00:00\",\r\n  \"description\": \"New appointment\",\r\n  \"patientId\": 1,\r\n  \"doctorId\": 1\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7178/api/AppointmentsControllers/CreateAppointment",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7178",
+							"path": [
+								"api",
+								"AppointmentsControllers",
+								"CreateAppointment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateAppointment",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1,\r\n  \"date\": \"2023-05-11T10:00:00\",\r\n  \"description\": \"New appointment\",\r\n  \"patientId\": 1,\r\n  \"doctorId\": 1\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7178/api/AppointmentsControllers/UpdateAppointment",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7178",
+							"path": [
+								"api",
+								"AppointmentsControllers",
+								"UpdateAppointment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteAppointment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7178/api/AppointmentsControllers/DeleteAppointment/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7178",
+							"path": [
+								"api",
+								"AppointmentsControllers",
+								"DeleteAppointment",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Notices",
+			"item": [
+				{
+					"name": "GetNotices",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7290/api/Notices/GetNotices",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7290",
+							"path": [
+								"api",
+								"Notices",
+								"GetNotices"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetNoticeById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7290/api/Notices/GetNoticeById/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7290",
+							"path": [
+								"api",
+								"Notices",
+								"GetNoticeById",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateNotice",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGV4YW1wbGUuY29tIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNjg4ODIxMzM4LCJleHAiOjE2ODg4MjI1MzQsImlhdCI6MTY4ODgyMTMzOH0.KceviB5T9a9Jh0DJUPFlr7Iox2VEyZ4l00F-fveSfjc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\":\"qweqweqwexqwe\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7290/api/Notices/CreateNotice",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7290",
+							"path": [
+								"api",
+								"Notices",
+								"CreateNotice"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateNotice",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGV4YW1wbGUuY29tIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNjg4ODIxMzM4LCJleHAiOjE2ODg4MjI1MzQsImlhdCI6MTY4ODgyMTMzOH0.KceviB5T9a9Jh0DJUPFlr7Iox2VEyZ4l00F-fveSfjc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 1001,\r\n        \"content\": \"elfcelfc\",\r\n        \"createdAt\": \"0001-01-01T00:00:00\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7290/api/Notices/UpdateNotice",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7290",
+							"path": [
+								"api",
+								"Notices",
+								"UpdateNotice"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteNotice",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGV4YW1wbGUuY29tIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNjg4ODIxMzM4LCJleHAiOjE2ODg4MjI1MzQsImlhdCI6MTY4ODgyMTMzOH0.KceviB5T9a9Jh0DJUPFlr7Iox2VEyZ4l00F-fveSfjc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:7290/api/Notices/DeleteNotice/1001",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7290",
+							"path": [
+								"api",
+								"Notices",
+								"DeleteNotice",
+								"1001"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Prescriptions",
+			"item": [
+				{
+					"name": "GetPrescriptions",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGV4YW1wbGUuY29tIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNjg4ODQzMjY2LCJleHAiOjE2ODg4NDQ0NjYsImlhdCI6MTY4ODg0MzI2Nn0.RHLoy8q9nLdQHqeGjiIYZAYVq8neTFrRtMPbFXk9CFQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:7044/api/Prescriptions/GetPrescriptions",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7044",
+							"path": [
+								"api",
+								"Prescriptions",
+								"GetPrescriptions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetPrescriptionById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGV4YW1wbGUuY29tIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNjg4ODI4Njc2LCJleHAiOjE2ODg4Mjk4NzYsImlhdCI6MTY4ODgyODY3Nn0.5I51c8PjNgBglGKhglKXHRQD2FQVn3GYDDU66dnABdU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:7044/api/Prescriptions/GetPrescriptionById/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7044",
+							"path": [
+								"api",
+								"Prescriptions",
+								"GetPrescriptionById",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreatePrescription",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGV4YW1wbGUuY29tIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNjg4ODI4NDQ5LCJleHAiOjE2ODg4Mjk2NDksImlhdCI6MTY4ODgyODQ0OX0.He2zrAA_mt50oGu3H-bOMwAr7BmUlaNAj1SfRZkOGMc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"createdAt\": \"2023-01-01T00:00:00\",\r\n    \"medicines\": \"create\",\r\n    \"description\": \"created description\",\r\n    \"patientId\": 4,\r\n    \"doctorId\": 2\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7044/api/Prescriptions/CreatePrescription",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7044",
+							"path": [
+								"api",
+								"Prescriptions",
+								"CreatePrescription"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdatePrescription",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGV4YW1wbGUuY29tIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNjg4ODI4Njc2LCJleHAiOjE2ODg4Mjk4NzYsImlhdCI6MTY4ODgyODY3Nn0.5I51c8PjNgBglGKhglKXHRQD2FQVn3GYDDU66dnABdU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 1003,\r\n        \"createdAt\": \"2023-01-01T00:00:00\",\r\n        \"expiresAt\": null,\r\n        \"medicines\": \"create\",\r\n        \"description\": \"changed\",\r\n        \"patientId\": 4,\r\n        \"patient\": null,\r\n        \"doctorId\": 2,\r\n        \"doctor\": null\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7044/api/Prescriptions/UpdatePrescription/",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7044",
+							"path": [
+								"api",
+								"Prescriptions",
+								"UpdatePrescription",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeletePrescription",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGV4YW1wbGUuY29tIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNjg4ODI4Njc2LCJleHAiOjE2ODg4Mjk4NzYsImlhdCI6MTY4ODgyODY3Nn0.5I51c8PjNgBglGKhglKXHRQD2FQVn3GYDDU66dnABdU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:7044/api/Prescriptions/DeletePrescription/1003",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7044",
+							"path": [
+								"api",
+								"Prescriptions",
+								"DeletePrescription",
+								"1003"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admins",
+			"item": [
+				{
+					"name": "GetAdmins",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGV4YW1wbGUuY29tIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNjg4ODQ4MjMzLCJleHAiOjE2ODg4NDk0MzMsImlhdCI6MTY4ODg0ODIzM30.s404EqC-_-E4BNz563Gxf9hEt5DjyaxAmgr_bgLI5lI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:7061/api/Admins/GetAdminById/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7061",
+							"path": [
+								"api",
+								"Admins",
+								"GetAdminById",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAdminById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7061/api/Admins/GetAdminById/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7061",
+							"path": [
+								"api",
+								"Admins",
+								"GetAdminById",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateAdmin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstName\": \"John\",\r\n  \"lastName\": \"Doe\",\r\n  \"emailAddress\": \"johndoe@example.com\",\r\n  \"password\": \"myPassword123\",\r\n  \"dateOfBirth\": \"1990-01-01\",\r\n  \"role\": \"Admin\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7061/api/Admins/CreateAdmin",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7061",
+							"path": [
+								"api",
+								"Admins",
+								"CreateAdmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateAdmin",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"id\":\"1002\",\r\n  \"firstName\": \"Peggy\",\r\n  \"lastName\": \"Doe\",\r\n  \"emailAddress\": \"peggy@example.com\",\r\n  \"password\": \"myPassword123\",\r\n  \"dateOfBirth\": \"1990-01-01\",\r\n  \"role\": \"Admin\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7061/api/Admins/UpdateAdmin/1002",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7061",
+							"path": [
+								"api",
+								"Admins",
+								"UpdateAdmin",
+								"1002"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteAdmin",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7061/api/Admins/DeleteAdmin/1001",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7061",
+							"path": [
+								"api",
+								"Admins",
+								"DeleteAdmin",
+								"1001"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Doctors",
+			"item": [
+				{
+					"name": "GetDoctors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7233/api/Doctors/GetDoctors",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7233",
+							"path": [
+								"api",
+								"Doctors",
+								"GetDoctors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetDoctorById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7233/api/Doctors/GetDoctorById/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7233",
+							"path": [
+								"api",
+								"Doctors",
+								"GetDoctorById",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateDoctor",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGV4YW1wbGUuY29tIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNjg4ODQ4MjMzLCJleHAiOjE2ODg4NDk0MzMsImlhdCI6MTY4ODg0ODIzM30.s404EqC-_-E4BNz563Gxf9hEt5DjyaxAmgr_bgLI5lI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Doe\",\r\n    \"emailAddress\": \"john@example.com\",\r\n    \"password\": \"myPassword123\",\r\n    \"dateOfBirth\": \"1980-05-15\",\r\n    \"role\": \"Doctor\",\r\n    \"specialization\": \"Allergist\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7233/api/Doctors/CreateDoctor",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7233",
+							"path": [
+								"api",
+								"Doctors",
+								"CreateDoctor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateDoctor",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 1001,\r\n        \"firstName\": \"Gospi\",\r\n        \"lastName\": \"Doe\",\r\n        \"emailAddress\": \"john@example.com\",\r\n        \"password\": \"myPassword123\",\r\n        \"dateOfBirth\": \"1980-05-15T00:00:00\",\r\n        \"role\": \"Doctor\",\r\n        \"specialization\": \"Allergist\",\r\n        \"appointments\": null,\r\n        \"prescriptions\": null\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7233/api/Doctors/UpdateDoctor/1001",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7233",
+							"path": [
+								"api",
+								"Doctors",
+								"UpdateDoctor",
+								"1001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteDoctor",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7233/api/Doctors/DeleteDoctor/1001",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7233",
+							"path": [
+								"api",
+								"Doctors",
+								"DeleteDoctor",
+								"1001"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Patients",
+			"item": [
+				{
+					"name": "GetPatients",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7121/api/Patients/GetPatients",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7121",
+							"path": [
+								"api",
+								"Patients",
+								"GetPatients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetPatientById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7121/api/Patients/GetPatientById/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7121",
+							"path": [
+								"api",
+								"Patients",
+								"GetPatientById",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreatePatient",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Jane\",\r\n    \"lastName\": \"Smith\",\r\n    \"medicalHistory\": \"Lorem ipsum dolor sit amet\",\r\n    \"emailAddress\": \"jane.smith@example.com\",\r\n    \"password\": \"mySecretPassword\",\r\n    \"dateOfBirth\": \"1990-12-01\",\r\n    \"role\": \"Patient\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7121/api/Patients/CreatePatient",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7121",
+							"path": [
+								"api",
+								"Patients",
+								"CreatePatient"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdatePatient",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"1001\",\r\n    \"firstName\": \"Nipsey\",\r\n    \"lastName\": \"Smith\",\r\n    \"medicalHistory\": \"Lorem ipsum dolor sit amet\",\r\n    \"emailAddress\": \"jane.smith@example.com\",\r\n    \"password\": \"mySecretPassword\",\r\n    \"dateOfBirth\": \"1990-12-01\",\r\n    \"role\": \"Patient\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7121/api/Patients/UpdatePatient/1001",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7121",
+							"path": [
+								"api",
+								"Patients",
+								"UpdatePatient",
+								"1001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeletePatient",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7121/api/Patients/DeletePatient/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7121",
+							"path": [
+								"api",
+								"Patients",
+								"DeletePatient",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
