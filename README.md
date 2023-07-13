@@ -16,7 +16,7 @@ Authentication is done by using a bearer token.
 - Update-Database
 
 3. Set all microservices to run together
-4. 
+
   ![image](https://github.com/PWidla/MedManager/assets/89644623/7c663656-21bf-4978-ac25-851ed4458e07)
   ![image](https://github.com/PWidla/MedManager/assets/89644623/65be97fe-7d26-4832-a05d-eebd275fc4c7)
 
