@@ -1,6 +1,6 @@
 # MedManager
 
-This is a system built using .NET 6. It allows users to manage users (patients, doctors and admins), notices, prescriptions and appointments). The application uses MS SQL Database.
+This is a system built using .NET 6. It allows users to manage users (patients, doctors and admins), notices, prescriptions and appointments. The application uses MS SQL Database.
 Authentication is done by using a bearer token.
 
 ## Requirements
