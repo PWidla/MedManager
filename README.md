@@ -33,7 +33,8 @@ Authentication is done by using a bearer token.
 
 After running the application, users can work with API for instance via Postman. 
 Collection of postman requests is stored in MedManager.postman_collection.json file.
-You can import it by clicking Import button ![image](https://github.com/PWidla/MedManager/assets/89644623/8ae75c7f-323c-4718-bf09-5f06904d8d58)
+You can import it by clicking Import button 
+![image](https://github.com/PWidla/MedManager/assets/89644623/8ae75c7f-323c-4718-bf09-5f06904d8d58)
 and for instance dragging there the MedManager.postman_collection.json file.
 ![image](https://github.com/PWidla/MedManager/assets/89644623/3ad7cff6-f5de-47ad-bc0b-229f0b51e91f)
 ![image](https://github.com/PWidla/MedManager/assets/89644623/d8d282c0-8294-4b15-9a4c-14e2f66998ed)
